@@ -9,8 +9,28 @@ module.exports = {
     extend: {
       letterSpacing: {
         wide: '.6px',
-      }
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addComponents }) {
+      addComponents({
+        '.container': {
+          maxWidth: '100%',
+          '@screen sm': {
+            maxWidth: '80%',
+          },
+          '@screen md': {
+            maxWidth: '80%',
+          },
+          '@screen lg': {
+            maxWidth: '80%',
+          },
+          '@screen xl': {
+            maxWidth: '80%',
+          },
+        }
+      })
+    },require("daisyui")
+  ],
 }

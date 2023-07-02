@@ -1,17 +1,24 @@
 import React from "react";
 import { BiSolidUser, BiSearch, BiMicrophone } from "react-icons/bi";
 import Image from 'next/image'
+import { Sidenav } from "./Sidenav";
 
 export const Header = () => {
     return (
-        <header className="w-full border-b border-b-[#eee] p-[5px]">
-            <div className="container mx-auto">
+        <nav className="w-full border-b border-b-[#eee] py-[5px]">
+            <div className="px-[15px] md:container mx-auto">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center">
-                        <div className="cursor-pointer toggle-btn flex items-center mr-[15px]">
-                            <span className="one"></span>
-                            <span className="two"></span>
-                            <span className="three"></span>
+                        <div className="drawer">
+                            <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+                            <div className="drawer-content">
+                                {/* Page content here */}
+                                <label htmlFor="my-drawer" className="cursor-pointer toggle-btn flex items-center mr-[15px] drawer-button">
+                                    <span className="one"></span>
+                                    <span className="two"></span>
+                                    <span className="three"></span></label>
+                            </div>
+                            <Sidenav />
                         </div>
                         <a href="">
                             <Image
@@ -24,7 +31,7 @@ export const Header = () => {
                             />
                         </a>
                     </div>
-                    <div className="inline-block">
+                    <div className="hidden lg:inline-block">
                         <ul className="flex">
                             <li className="inline-block mr-[1.5vw] link">
                                 <a className="inline-block uppercase font-bold text-[12px] tracking-wide" href="">fashion</a>
@@ -44,12 +51,12 @@ export const Header = () => {
                         </ul>
                     </div>
                     <div className="inline-flex items-center">
-                        <div className="cursor-pointer"><BiSolidUser className="w-7 h-7" /></div>
-                        <div className="mx-[10px] cursor-pointer"><BiSearch className="w-7 h-7" /></div>
-                        <div className="cursor-pointer"><BiMicrophone className="w-7 h-7" /></div>
+                        <div className="cursor-pointer"><BiSolidUser className="w-[1.8rem] h-[1.8rem]" /></div>
+                        <div className="mx-[10px] cursor-pointer"><BiSearch className="w-[1.8rem] h-[1.8rem]" /></div>
+                        <div className="cursor-pointer"><BiMicrophone className="w-[1.8rem] h-[1.8rem]" /></div>
                     </div>
                 </div>
             </div>
-        </header>
+        </nav>
     );
 };

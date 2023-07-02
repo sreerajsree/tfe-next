@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .container {
-  width: 80%;
+  max-width: 80%;
 }
 
 .toggle-btn {
@@ -60,4 +60,27 @@
   width: 100%;
   left: 0;
   background: blueviolet;
+}
+
+.sidenav {
+  background-color: #eee;
+  position: fixed;
+  padding: 15px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 330px;
+  z-index: 150000;
+  overflow-y: auto;
+  /* -webkit-transition: transform .5s cubic-bezier(.55,0,.1,1);
+  -webkit-transition: -webkit-transform .5s cubic-bezier(.55,0,.1,1);
+  transition: -webkit-transform .5s cubic-bezier(.55,0,.1,1);
+  transition: transform .5s cubic-bezier(.55,0,.1,1);
+  transition: transform .5s cubic-bezier(.55,0,.1,1),-webkit-transform .5s cubic-bezier(.55,0,.1,1);
+  -webkit-transform: translateX(-335px);
+  transform: translate(-335px); */
+}
+
+.drawer {
+  width: auto;
 }
